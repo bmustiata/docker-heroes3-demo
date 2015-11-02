@@ -22,6 +22,11 @@ CMD perl -pi -e "s/raptor:x:1000:1000/raptor:x:$UID:$GID/" /etc/passwd && \
 # here the installation of Heroes 3 Demo was done manually,
 # using wine h3demo.exe, and just clicking install, without installing
 # .NET or the Gecko browser for wine.
+
+# also the data/wine_folder/drive_c/users/Public/Start\ Menu/Programs/3DO/
+# was removed, since there seems to be a Docker bug with filenames that contain
+# non ISO characters.
+
 ADD data/wine_folder /home/raptor/.wine
 EXPOSE 8081
 
